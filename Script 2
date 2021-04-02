@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "List of the Logins"
+#This code will show that logins.
+aureport -l
+#This code will show that stats of that directory by seeing if it was change or if anything has happen.
+echo "changes to directory"
+stat /var/log
