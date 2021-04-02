@@ -1,0 +1,12 @@
+#!/bin/bash
+#This code will just echo to the user whats happening.
+echo "Last User:"
+#This will bring up all of the lastest hectorc logins.
+last hectorc
+echo "logins between 12 and 6:"
+#This will help me get the specific time I want.
+last | grep -v wtmp | while read line
+do
+    date=`date -d "$(echo $line | awk '{ print $5" "$6" "$7 }')" +%s`
+    [[ $date -ge `date -d "$start 00:00" +%s` && $date -le `date -d "$end 18:000" +%s` ]] && echo $line
+done
