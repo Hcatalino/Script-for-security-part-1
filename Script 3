@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "Hidden Files"
+#This code will show the hidden file in a specific diretory in my case it would be /dev/null.
+find . -name ".*" -maxdepth 1 -type d 2> /dev/null
+#This will show the stats of that specific directory.
+stat /dev/null
+
